@@ -63,10 +63,14 @@ def show_madlib_form():
 def show_madlib():
     person = request.args.get('person')
     color = request.args.get('color')
-    noun = request.args.get('noun')
-    adjective = request.args.get('adjective')
+    nouns = request.args.get('nouns').split(' ')
+    past_verb = request.args.get('past_verb')
+    present_verb = request.args.get('present_verb')
+    adjectives = request.args.getlist('adjectives')
+    adverb = request.args.get('adverb')
+    template = choice(["madlib.html", "madlib2.html", "madlib3.html"])
 
-    return render_template("madlib.html", person=person, noun=noun, color=color, adjective=adjective)
+    return render_template(template, person=person, nouns=nouns, color=color, adjectives=adjectives, past_verb=past_verb, present_verb=present_verb, adverb=adverb)
 
 if __name__ == "__main__":
     # Setting debug=True gives us error messages in the browser and also

@@ -5,9 +5,12 @@
   </head>
   <body>
     <p>
-      There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
+      There once was a {{ color }} {{ nouns[0] }} sitting in the Hackbright Lab.
       When {{ person }} went to pick it up, it burst into flames in a totally {{
-      adjective }} way.
+      adjectives[0] }} and {{ adjectives[1] }} way.
     </p>
+    <form action="/hello">
+      <input type="submit" value="Start Over">
+  </form>
   </body>
 </html>
